@@ -37,6 +37,9 @@ Queue details.
 
 <img src="media/punytunes-queue-simple_640.webp" width="448" alt="Detail View" />
 
+> [!TIP]
+> There are two additional detail panes only visible using hotkeys. `Shift` + `L` will show a Logs
+> pane, and `Shift` + `P` will show a streamer Payloads pane.
 
 ## Technology Stack
 
