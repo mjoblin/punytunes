@@ -1,4 +1,4 @@
-# <img src="app-icon.png" width="40" style="vertical-align: middle"> PunyTunes
+# <img src="app-icon.png" width="25"> PunyTunes
 
 [PunyTunes](https://punytunes.app) is a desktop system tray application for controlling
 [StreamMagic music streamers](https://www.cambridgeaudio.com/row/en/products/streammagic).
@@ -6,6 +6,7 @@
 Volume control requires the streamer to be in Pre-Amp or Control Bus mode. PunyTunes also supports
 Hegel amplifiers.
 
+> [!NOTE]
 > This code is "source available". You're welcome to use it in any way allowed by the
 > [license](./LICENSE). The application however is **not under active development** and this
 > repository is **not actively maintained**. Any GitHub Issues or Pull Requests will probably not be
@@ -17,13 +18,22 @@ See the [PunyTunes application website](https://punytunes.app) for more details.
 
 ### In the MacOS System Tray
 
+PunyTunes is a system tray application. You activate its display by clicking on the PunyTunes icon
+in the system tray.
+
 <img src="media/punytunes-system-tray-vol_640.webp" width="448" alt="PunyTunes System Tray" />
 
 ### Compact View
 
+The default compact view shows what is currently playing on the streamer, along with transport
+controls and (when available) volume controls.
+
 <img src="media/punytunes-preamp_640.webp" width="448" alt="Compact View" />
 
-### Detail View (open on the "Queue" section)
+### Detail View
+
+More details can be shown for the Queue, Presets, Sources, and Streamer. The following shows the
+Queue details.
 
 <img src="media/punytunes-queue-simple_640.webp" width="448" alt="Detail View" />
 
@@ -113,6 +123,7 @@ Then build the application from the project root:
 pnpm tauri build --target universal-apple-darwin
 ```
 
+> [!WARNING]
 > The first time you build, you will get an error telling you to update `"com.CHANGE_THIS"` in
 > `src-tauri/tauri.conf.json`. See the
 > [Tauri configuration documentation](https://v2.tauri.app/reference/config/#identifier) for
