@@ -1,0 +1,82 @@
+:root {
+    --root-font-size: 14px;
+    --root-line-height: 24px;
+    --root-font-weight: 400;
+    --root-color: #f6f6f6;
+
+    --app-background-color: #2f2f2f;
+    --app-padding: 5px;
+
+    /* Text colors */
+    --text-normal: var(--root-color);
+    --text-mid: #c3c3c3;
+    --text-dim: #a0a0a0;
+    --text-max: #fcfcfc;
+    --text-min: #030303;
+
+    /* General colors */
+    --accent-color: #0862b2;
+    --accent-color-bright: #1972c2;
+    --accent-color-brighter: #3992f2;
+    --accent-color-brightest: #4ca5f5;
+    --accent-color-dim: #0352a2;
+    --dark: #0f0f0f98;
+    --background-brighter: #61646a;
+    --background-bright: #51545a;
+    --background-mid: #41444a;
+    --background-dim: #3e3e3e;
+    --background-dimmer: #373737;
+    --alert-color: #e92333;
+    --success-color: #23e933;
+    --attention-color: var(--flax);
+    --attention-color-bright: var(--flax-bright);
+
+    /* Artisan colors */
+    --space-cadet: #6e69aeff;
+    --cerulean: #227c9dff;
+    --moss-green: #9a9b73ff;
+    --taupe-gray: #a49694;
+    --rose-quartz: #afaab9;
+    --robin-egg-blue: #59c3c3;
+    --sea-green: #4c956c;
+    --flax: #e0d68a;
+    --flax-bright: #f0e69a;
+    --goldenrod: #d5a021;
+    --goldenrod-dark: #cc9711;
+    --tomato: #cf402eff;
+    --burnt-umber: #823329ff;
+    --wheat: #e5cea3;
+
+    @media (prefers-color-scheme: light) {
+        --app-background-color: #f9f9f9;
+        --root-color: #0c0c0c;
+
+        /* Text colors */
+        --text-normal: var(--root-color);
+        --text-mid: #232323;
+        --text-dim: #535353;
+        --text-max: #464646;
+        --text-min: #f3f3f3;
+
+        /* General colors */
+        --accent-color: #0862b2;
+        --accent-color-bright: #1972c2;
+        --accent-color-brighter: #3992f2;
+        --accent-color-brightest: #4ca5f5;
+        --accent-color-dim: #0352a2;
+        --dark: #0f0f0f98;
+
+        /* In light mode, "brighter" and "dimmer" mean the opposite of what they sound like;
+           which suggests these concepts need to be renamed. */
+        --background-brighter: #c3c3c3;
+        --background-bright: #dadada;
+        --background-mid: #e0e0e0;
+        --background-dim: #e7e7e7;
+        --background-dimmer: #f3f3f3;
+
+        --alert-color: #c91323;
+        --success-color: #3CB371;
+        --attention-color: var(--goldenrod-dark);
+        --attention-color-bright: var(--goldenrod);
+    }
+}

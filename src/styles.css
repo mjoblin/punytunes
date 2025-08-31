@@ -1,0 +1,181 @@
+@import "./vars.css";
+
+:root {
+    font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+    font-size: var(--root-font-size);
+    line-height: var(--root-line-height);
+    font-weight: var(--root-font-weight);
+
+    color: var(--root-color);
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+}
+
+html {
+    /* Prevent "overscroll": https://stackoverflow.com/questions/12046315/prevent-overscrolling-of-web-page */
+    overflow: hidden;
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    overflow: hidden;
+}
+
+h1 {
+    font-size: 1.3rem;
+    margin-bottom: 0.4rem;
+}
+
+/* Inputs / Buttons ---------------------------------------------------------------------------- */
+
+input,
+button {
+    border-radius: 4px;
+    border: 1px solid transparent;
+    padding: 0.4em 0.8em;
+    height: fit-content;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    color: var(--root-color);
+    background-color: var(--dark);
+    transition: border-color 0.25s, background-color 0.25s, color 0.25s;
+}
+
+button {
+    cursor: pointer;
+    background-color: var(--accent-color);
+}
+
+button:hover {
+    color: var(--text-max);
+    background-color: var(--accent-color-bright);
+}
+
+button:enabled:active {
+    position: relative;
+    top: 1px;
+}
+
+button:disabled {
+    background-color: dimgrey;
+    border-color: dimgrey;
+    color: var(--text-mid);
+    cursor: not-allowed;
+}
+
+/* Tables -------------------------------------------------------------------------------------- */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: auto;
+}
+
+tr {
+    --row-border-radius: 3px;
+
+    vertical-align: top;
+    transition: background-color .05s ease-in;
+
+    & > td:first-child {
+        border-top-left-radius: var(--row-border-radius);
+        border-bottom-left-radius: var(--row-border-radius);
+        overflow: hidden;
+    }
+
+    & > td:last-child {
+        border-top-right-radius: var(--row-border-radius);
+        border-bottom-right-radius: var(--row-border-radius);
+        overflow: hidden;
+    }
+
+    &:hover {
+        background-color: var(--background-mid);
+        cursor: pointer;
+    }
+
+    & > .active {
+        background-color: var(--goldenrod);
+    }
+}
+
+td {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 7px;
+    padding-right: 7px;
+    white-space: normal;
+    word-wrap: break-word;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+/* Utilities ----------------------------------------------------------------------------------- */
+
+.detail-data-empty {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-mid);
+    padding: 20px;
+    font-size: 0.9rem;
+}
+
+/* Scrollbars ---------------------------------------------------------------------------------- */
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+}
+
+::-webkit-scrollbar-track-piece {
+    background-color: var(--background-dim);
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background-color: var(--background-bright);
+}
+
+::-webkit-scrollbar-corner {
+    background-color: var(--background-dim);
+}
+
+/*
+    Set the app to consume the entire vertical space of the html element, to support the ability
+    to position the details screens either above or below the main playback details.
+*/
+#app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Media Queries ------------------------------------------------------------------------------- */
+
+/* No current support for the light color scheme */
+@media (prefers-color-scheme: light) {
+    tr {
+        & > .active {
+            background-color: var(--goldenrod-dark);
+        }
+    }
+
+    ::-webkit-scrollbar-thumb {
+        border-radius: 3px;
+        background-color: var(--background-brighter);
+    }
+}

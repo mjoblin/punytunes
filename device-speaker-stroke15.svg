@@ -1,0 +1,51 @@
+<svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="icon icon-tabler icon-tabler-device-speaker"
+        width="24" height="24"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="white"
+        fill="none"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+>
+    <defs>
+        <linearGradient id="linearGrad" x1="35%" y1="15%" x2="85%" y2="85%">
+            <stop offset="0%" style="stop-color:#ff3816;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#FFD700;stop-opacity:1" />
+        </linearGradient>
+
+        <radialGradient id="radialGrad" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+            <stop offset="0%" style="stop-color:rgb(255,0,0);stop-opacity:1" />
+            <stop offset="100%" style="stop-color:rgb(0,0,255);stop-opacity:1" />
+        </radialGradient>
+    </defs>
+
+    <!-- canvas background -->
+    <path
+            stroke="none"
+            d="M0 0h24v24H0z"
+            fill="transparent"
+    />
+
+    <!-- speaker -->
+    <path
+            stroke="white"
+            stroke-width="0.5"
+            fill="url(#linearGrad)"
+            d="M5 3m0 2a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2z"
+    />
+
+    <!-- woofer -->
+    <path
+            stroke="black"
+            fill="black"
+            d="M12 14m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"
+    />
+
+    <!-- tweeter -->
+    <path
+            stroke="black"
+            d="M12 7l0 .01"
+    />
+</svg>
