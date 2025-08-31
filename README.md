@@ -1,4 +1,4 @@
-# PunyTunes
+# <img src="app-icon.png" width="40" style="vertical-align: middle"> PunyTunes
 
 [PunyTunes](https://punytunes.app) is a desktop system tray application for controlling
 [StreamMagic music streamers](https://www.cambridgeaudio.com/row/en/products/streammagic).
@@ -17,15 +17,15 @@ See the [PunyTunes application website](https://punytunes.app) for more details.
 
 ### In the MacOS System Tray
 
-![PunyTunes System Tray](./media/punytunes-system-tray-vol_640.webp)
+<img src="media/punytunes-system-tray-vol_640.webp" width="448" alt="PunyTunes System Tray" />
 
 ### Compact View
 
-![Compact View](./media/punytunes-preamp_640.webp)
+<img src="media/punytunes-preamp_640.webp" width="448" alt="Compact View" />
 
 ### Detail View (open on the "Queue" section)
 
-![Detail View](./media/punytunes-queue-simple_640.webp)
+<img src="media/punytunes-queue-simple_640.webp" width="448" alt="Detail View" />
 
 
 ## Technology Stack
@@ -38,13 +38,12 @@ the back-end and [Svelte](https://svelte.dev/) for the UI.
 ### System Pre-Requisites
 
 First follow the [Tauri pre-requisite installation](https://v2.tauri.app/start/) instructions.
-Follow the requirements for a desktop application only (PunyTunes does not target mobile), for your
+Follow the requirements for a desktop application only (PunyTunes does not target mobile) for your
 platform of choice (MacOS, Windows, or Linux).
 
 In short, you will need **Rust** and **Node.js** installed.
 
-PunyTunes development also uses [pnpm](https://pnpm.io/installation), so you should install that
-too.
+PunyTunes development also uses [pnpm](https://pnpm.io/installation) so you should install that too.
 
 ### Installing PunyTunes
 
@@ -65,7 +64,7 @@ you prefer, but the following assumes Rust Rover.
 
 Load the PunyTunes project **root directory**, and attach the `src-tauri/Cargo.toml`.
 
-Create a **Run Configuration**. Set the "Command" to `run --no-default-features`, and the "Working
+Create a **Run Configuration**. Set the "Command" to `run --no-default-features` and the "Working
 Directory" to `src-tauri/`.
 
 ### Run Locally
@@ -82,11 +81,11 @@ This will start a full instance of PunyTunes, so you should see the icon in your
 clicking the "Find" button).
 
 Then, in Rust Rover, **start the Run Configuration**. This requires that `pnpm tauri dev` is already
-running (see above). This will start a **second instance of PunyTunes**, which will result in a
+running (see above). This will start a **second instance of PunyTunes** which will result in a
 second PunyTunes icon appearing in your system tray. **This is the instance you will be
 developing**.
 
-Now, any changes to make to the Svelte UI code from Rust Rover will live-update in the second
+Now, any changes you make to the Svelte UI code from Rust Rover will live-update in the second
 instance of the application.
 
 #### Floating Window
@@ -108,7 +107,7 @@ On MacOS you may first need to run this:
 rustup target add x86_64-apple-darwin
 ```
 
-And then build the application from the project root:
+Then build the application from the project root:
 
 ```
 pnpm tauri build --target universal-apple-darwin
@@ -124,6 +123,7 @@ second time.
 
 You will see warnings during the build. These should not prevent the build from succeeding, and are
 largely due to the code having some Windows-specific code paths which are not followed on the Mac.
+Newer Rust compiler versions might also flag additional warnings.
 
 For Windows, build the application with this from the project root:
 
@@ -131,22 +131,23 @@ For Windows, build the application with this from the project root:
 pnpm tauri build
 ```
 
-The built files will be under a platform-specific directory under `src-tauri/target/`.
+The built files will be written to a platform-specific directory under `src-tauri/target/`.
 
 ## Brief Code Overview
 
-The Rust back-end manages the communication with the StreamMagic streamer. The code lives under
-`src-tauri/src/` with `main.rs` being the entry point.
+The Rust back-end handles the communication with the StreamMagic streamer (and Hegel amplifiers).
+This code lives under `src-tauri/src/` with `main.rs` being the entry point.
 
-The Svelte UI manages the web view. The code lives under `src/` with `App.svelte` being the
+The Svelte UI handles the web view. This code lives under `src/` with `App.svelte` being the
 entry point.
 
 Communication between the Svelte front-end and the Rust back-end is defined in `src/lib/commands.ts`
 and `src-tauri/src/commands.rs`.
 
-Svelte state (for display) is handled in `src/lib/state.ts`.
+Svelte state (for display, including streamer updates received from the back-end) is handled in
+`src/lib/state.ts`.
 
-### Testing
+### Tests
 
 Run tests from `src-tauri/` with `cargo test`.
 
