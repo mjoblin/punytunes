@@ -8,9 +8,8 @@ Hegel amplifiers.
 
 > [!NOTE]
 > This code is "source available". You're welcome to use it in any way allowed by the
-> [license](./LICENSE). The application however is **not under active development** and this
-> repository is **not actively maintained**. Any GitHub Issues or Pull Requests will probably not be
-> responded to, but you can always try.
+> [license](./LICENSE). The application however is **not currently under active development**. Any
+> Issues or Pull Requests may not be responded to, but you can always try.
 
 ## Screenshots
 
